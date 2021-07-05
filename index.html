@@ -1,3 +1,4 @@
+<!-- index.html -->
 <html>
 <head>
   <!-- jquery読み込み -->
@@ -10,10 +11,10 @@
   <link rel="manifest" href="manifest.json">
   <script>
     //PWA関係の処理
-    // service workerが有効なら、service-worker.js を登録します
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js').then(function() { console.log('Service Worker Registered'); });
-   }
+      // service workerが有効なら、service-worker.js を登録します
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js').then(function() { console.log('Service Worker Registered'); });
+      }
    //ドロワーメニューのコード
    $(document).ready(function() {
     $('.drawer').drawer({
@@ -35,7 +36,17 @@
     });
    });
   </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PWAテスト画面</title>
+  <style>
+    @media screen and (max-width: 480px) {
+      nav{
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
   <body class="drawer drawer--left">
