@@ -41,6 +41,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PWAテスト画面</title>
   <style>
+    header{
+      background-color: white;
+    }
+    .fa-arrow-alt-circle-left{
+      margin-right: 50px;
+    }
+    .year{
+      margin: 0px 25px;
+    }
+    .fa-arrow-circle-right{
+      margin-left: 50px;
+    }
+    .drawer-hamburger{
+      margin-top: 50px;
+    }
+    .fa-pencil-alt{
+      margin-right: 50px;
+    }
+    .fa-home{
+      margin: 0px 50px;
+    }
+    .fa-clipboard{
+      margin-left: 50px;
+    }
+    footer{
+      background-color: white;
+      margin-top: 680px;
+    }
     @media screen and (max-width: 480px) {
       .drawer-brand{
         font-size: 22px;
@@ -50,31 +78,46 @@
       }
     }
   </style>
+  <!-- fontawesome読み込み -->
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
-  <body class="drawer drawer--left">
-    <header role="banner">
-      <button type="button" class="drawer-toggle drawer-hamburger">
-        <span class="sr-only">toggle navigation</span>
-        <span class="drawer-hamburger-icon"></span>
-      </button>
-      <nav class="drawer-nav" role="navigation">
-        <ul class="drawer-menu">
-          <li><a class="drawer-brand" href="#">プロフィール</a></li>
-          <li><a class="drawer-menu-item" href="#">アカウント</a></li>
-          <li><a class="drawer-menu-item" href="#">予算</a></li>
-          <li><a class="drawer-brand" href="#">データ</a></li>
-          <li><a class="drawer-menu-item" href="#">統計・グラフ図</a></li>
-          <li><a class="drawer-menu-item" href="#">アドバイス</a></li>
-          <li><a class="drawer-menu-item" href="#">使用履歴</a></li>
-          <li><a class="drawer-brand" href="#">ヘルプ</a></li>
-          <li><a class="drawer-menu-item" href="#">お問い合わせ</a></li>
-          <li><a class="drawer-menu-item" href="#">設定</a></li>
-          <li><a class="drawer-menu-item" href="#">使い方</a></li>
-        </ul>
-      </nav>
-    </header>
-  </body>
+  
+  <header>
+    <i class="fas fa-arrow-alt-circle-left fa-3x"></i>
+    <h2 class="year" style="display: inline;">サンプル</h2>
+    <i class="fas fa-arrow-circle-right fa-3x"></i>
+  </header>
+
+    <body class="drawer drawer--left">
+      <header role="banner">
+        <button type="button" class="drawer-toggle drawer-hamburger">
+          <span class="sr-only">toggle navigation</span>
+          <span class="drawer-hamburger-icon"></span>
+        </button>
+        <nav class="drawer-nav" role="navigation">
+          <ul class="drawer-menu">
+            <li><a class="drawer-brand" href="#">プロフィール</a></li>
+            <li><a class="drawer-menu-item" href="#">アカウント</a></li>
+            <li><a class="drawer-menu-item" href="#">予算</a></li>
+            <li><a class="drawer-brand" href="#">データ</a></li>
+            <li><a class="drawer-menu-item" href="#">統計・グラフ図</a></li>
+            <li><a class="drawer-menu-item" href="#">アドバイス</a></li>
+            <li><a class="drawer-menu-item" href="#">使用履歴</a></li>
+            <li><a class="drawer-brand" href="#">ヘルプ</a></li>
+            <li><a class="drawer-menu-item" href="#">お問い合わせ</a></li>
+            <li><a class="drawer-menu-item" href="#">設定</a></li>
+            <li><a class="drawer-menu-item" href="#">使い方</a></li>
+          </ul>
+        </nav>
+      </header>
+    </body>
+
+  <footer>
+    <i class="fas fa-pencil-alt fa-3x"></i>
+    <i class="fas fa-home fa-3x"></i>
+    <i class="far fa-clipboard fa-3x"></i>
+  </footer>
 
 </body>
 </html>
