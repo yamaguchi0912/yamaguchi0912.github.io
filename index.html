@@ -65,9 +65,33 @@
     .fa-clipboard{
       margin-left: 50px;
     }
+    .front-box {
+      margin       : auto;
+      overflow     : hidden;
+      position     : relative;
+        /* 図形のCSS */
+      top			 : 10%;
+      width        : 300px;
+      height       : 300px;
+      background   : linear-gradient(to bottom, #fffffff1, #fffff1);
+      border-radius: 50%;
+      border		 : 9px solid #66ff66;
+      }
+      .front-box span {      /* 前面の文字エリア */
+      position     : absolute;
+      display      : inline-block;
+      background   : rgba(255, 255, 255, 0.6);
+      top          : 50%;
+      left         : 50%;
+      padding      : 3px;
+      color        : #333;
+      transform    : translate(-50%,-50%);
+      font-size    : 12pt;
+      border-radius: 5px;
+    }
     footer{
       background-color: white;
-      margin-top: 620px;
+      margin-top: 320px;
     }
     @media screen and (max-width: 480px) {
       .drawer-brand{
@@ -85,7 +109,7 @@
   
   <header>
     <i class="fas fa-arrow-alt-circle-left fa-3x"></i>
-    <h2 class="year" style="display: inline;">サンプル</h2>
+    <h2 class="year" style="display: inline;">20xx年</h2>
     <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
   </header>
 
@@ -112,6 +136,12 @@
         </nav>
       </header>
     </body>
+
+    <div class="front-box" id="makeImg1"> <!--前の円-->
+      <span>￥12,345</span>
+    </div>
+    <div class="buck-box" id="makeImg2"> <!--後ろの円-->
+    </div>
 
   <footer>
     <i class="fas fa-pencil-alt fa-3x"></i>
