@@ -93,6 +93,51 @@
       background-color: white;
       margin-top: 320px;
     }
+    /* ポップアップ表示 */
+    .open {
+      cursor:pointer; /* マウスオーバーでカーソルの形状を変えることで、クリックできる要素だとわかりやすいように */
+    }
+    #pop-up {
+      display: none; /* label でコントロールするので input は非表示に */
+    }
+    .overlay {
+      display: none; /* input にチェックが入るまでは非表示に */
+    }
+    #pop-up:checked + .overlay {
+      display: block;
+      z-index: 9999;
+      background-color: #00000070;
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+    }
+    .window {
+      width: 90vw;
+      max-width: 380px;
+      height: 240px;
+      background-color: #ffffff;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .text {
+      font-size: 18px;
+      margin: 0;
+    }
+    .close {
+      cursor:pointer;
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      font-size: 20px;
+    }
     /* ここを変更するとデバイスごとで表示が変わる */
     @media screen and (max-width: 480px) {
       .drawer-brand{
@@ -145,9 +190,26 @@
     </div>
 
   <footer>
-    <i class="fas fa-pencil-alt fa-3x"></i>
-    <i class="fas fa-home fa-3x"></i>
-    <i class="far fa-clipboard fa-3x"></i>
+    <label class="open" for="pop-up"><i class="fas fa-pencil-alt fa-3x"></i></label>
+      <input type="checkbox" id="pop-up">
+      <div class="overlay">
+        <div class="window">
+          <label class="close" for="pop-up">×</label>
+          <p class="text">デモ画面</p>
+        </div>
+      </div>
+
+    <i class="fas fa-home fa-3x"><a href="#"></a></i>
+
+    <label class="open" for="pop-up"><i class="far fa-clipboard fa-3x"></i></label>
+      <input type="checkbox" id="pop-up">
+      <div class="overlay">
+        <div class="window">
+          <label class="close" for="pop-up">×</label>
+          <p class="text">デモ画面</p>
+        </div>
+      </div>
+
   </footer>
 
 </body>
