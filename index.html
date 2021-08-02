@@ -35,6 +35,21 @@
       showOverlay: true
     });
    });
+
+   //入力ボタンが押されたときの処理
+   function addTable() {
+    var $formObject = document.getElementById( "sampleForm" );
+    var $tableObject = document.getElementById( "sampleTable" );
+    var $tr = "<tr>";
+    $tr += "<td>" + $formObject.formName.value + "</td>";
+    $tr += "<td>" + $formObject.formArea.value + "</td>";
+    $tr += "<td>" + $formObject.formAge.value + "</td>";
+    $tr += "<td>" + $formObject.formAge.value + "</td>";
+    $tr += "</tr>";
+    $tableObject.insertAdjacentHTML( "beforeend", $tr );
+
+  }
+
   </script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,8 +62,8 @@
     .fa-arrow-alt-circle-left{
       margin-right: 50px;
     }
-    .year{
-      margin: 0px 30px;
+    .year-month{
+      margin: 0px 10px;
     }
     .fa-arrow-alt-circle-right{
       margin-left: 50px;
@@ -89,9 +104,48 @@
       font-size    : 12pt;
       border-radius: 5px;
     }
+    .total-price{
+      font-size: 24px;
+    }
     footer{
       background-color: white;
       margin-top: 320px;
+    }
+    /* table要素 */
+    #wrapSampleForm {
+    width: 500px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    }
+    #wrapSampleForm {
+        background-color: #f0f8ff;
+    }
+    #sampleTable {
+        background-color: #ffffcc;
+    }
+    #sampleTable th {
+        color: #000000 !important;
+    }
+    #sampleTable th,
+    #sampleTable td {
+        font-size: 15px !important;
+        border: 1px solid gray;
+        background-color: #ffffcc;
+    }
+    #tableName {
+        width: 20%;
+    }
+    #formArea {
+        width: 15%;
+    }
+    #formAge {
+        width: 15%;
+    }
+    #sampleForm * {
+        margin: 0 0 7px 0;
+        vertical-align: text-top;
     }
     /* ポップアップ表示 */
     .open {
@@ -138,6 +192,11 @@
       right: 4px;
       font-size: 20px;
     }
+    /* 予算 */
+    .budged{
+      color: black;
+      margin: 0px 50px;
+    }
     /* ここを変更するとデバイスごとで表示が変わる */
     @media screen and (max-width: 480px) {
       .drawer-brand{
@@ -152,10 +211,10 @@
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
-  
+
   <header>
     <i class="fas fa-arrow-alt-circle-left fa-3x"></i>
-    <h2 class="year" style="display: inline;">20xx年</h2>
+    <h2 class="year-month" style="display: inline;">2021年8月</h2>
     <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
   </header>
 
@@ -184,10 +243,18 @@
     </body>
 
     <div class="front-box" id="makeImg1"> <!--前の円-->
-      <span>￥12,345</span>
+      <span class="total-price">￥12,345</span>
     </div>
     <div class="buck-box" id="makeImg2"> <!--後ろの円-->
     </div>
+
+    <table id="sampleTable">
+      <tr>
+          <th id="tableName">金額</th>
+          <th id="tableArea">ジャンル</th>
+          <th id="tableAge">日付</th>
+      </tr>
+  </table>
 
   <footer>
     <label class="open" for="pop-up"><i class="fas fa-pencil-alt fa-3x"></i></label>
@@ -195,11 +262,36 @@
       <div class="overlay">
         <div class="window">
           <label class="close" for="pop-up">×</label>
-          <p class="text">デモ画面</p>
+          <p class="text">
+            <div id="wrapSampleForm">
+              <form id="sampleForm">
+                  【入力欄】
+                  <br />
+                  金額：<input type="text" name="formName" value="1000">
+                  <br />
+                  ジャンル：
+                      <select name="formArea">
+                          <option selected>食費</option>
+                          <option>日用品</option>
+                          <option>交通費</option>
+                          <option>衣類</option>
+                          <option>レジャー</option>
+                          <option>その他</option>
+                      </select>
+                  <br />
+                  日付：
+                      <input type="text" name="formAge" value="8月1日">
+                  <br />
+              </form>
+              <button onclick="addTable()">追加</button>
+            </div>
+          </p>
         </div>
       </div>
 
-    <i class="fas fa-home fa-3x"><a href="#"></a></i>
+    <a class="budged" href="#">
+      <i class="fas fa-hand-holding-usd fa-3x"></i>
+    </a>
 
     <label class="open" for="pop-up"><i class="far fa-clipboard fa-3x"></i></label>
       <input type="checkbox" id="pop-up">
