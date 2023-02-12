@@ -15,39 +15,6 @@
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js').then(function() { console.log('Service Worker Registered'); });
       }
-   //ドロワーメニューのコード
-   $(document).ready(function() {
-    $('.drawer').drawer({
-      class: {
-        nav: 'drawer-nav',
-        toggle: 'drawer-toggle',
-        overlay: 'drawer-overlay',
-        open: 'drawer-open',
-        close: 'drawer-close',
-        dropdown: 'drawer-dropdown'
-      },
-      iscroll: {
-        // Configuring the iScroll
-        // https://github.com/cubiq/iscroll#configuring-the-iscroll
-        mouseWheel: true,
-        preventDefault: false
-      },
-      showOverlay: true
-    });
-   });
-
-   //入力ボタンが押されたときの処理
-   function addTable() {
-    var $formObject = document.getElementById( "sampleForm" );
-    var $tableObject = document.getElementById( "sampleTable" );
-    var $tr = "<tr>";
-    $tr += "<td>" + $formObject.formName.value + "</td>";
-    $tr += "<td>" + $formObject.formArea.value + "</td>";
-    $tr += "<td>" + $formObject.formAge.value + "</td>";
-    $tr += "</tr>";
-    $tableObject.insertAdjacentHTML( "beforeend", $tr );
-  }
-
   </script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -215,77 +182,15 @@
   <header>
     <i class="fas fa-arrow-alt-circle-left fa-3x"></i>
     <h2 class="year-month" style="display: inline;">2021年8月</h2>
-    <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
   </header>
 
-    <body class="drawer drawer--left">
-      <header role="banner">
-        <button type="button" class="drawer-toggle drawer-hamburger">
-          <span class="sr-only">toggle navigation</span>
-          <span class="drawer-hamburger-icon"></span>
-        </button>
-        <nav class="drawer-nav" role="navigation">
-          <ul class="drawer-menu">
-            <li><a class="drawer-brand" href="#">プロフィール</a></li>
-            <li><a class="drawer-menu-item" href="#">アカウント</a></li>
-            <li><a class="drawer-menu-item" href="#">予算</a></li>
-            <li><a class="drawer-brand" href="#">データ</a></li>
-            <li><a class="drawer-menu-item" href="#">統計・グラフ図</a></li>
-            <li><a class="drawer-menu-item" href="#">アドバイス</a></li>
-            <li><a class="drawer-menu-item" href="#">使用履歴</a></li>
-            <li><a class="drawer-brand" href="#">ヘルプ</a></li>
-            <li><a class="drawer-menu-item" href="#">お問い合わせ</a></li>
-            <li><a class="drawer-menu-item" href="#">設定</a></li>
-            <li><a class="drawer-menu-item" href="#">使い方</a></li>
-          </ul>
-        </nav>
-      </header>
+    <body>
+      
     </body>
 
-    <div class="front-box" id="makeImg1"> <!--前の円-->
-      <span class="total-price">￥12,345</span>
-    </div>
-    <div class="buck-box" id="makeImg2"> <!--後ろの円-->
-    </div>
-
-    <table id="sampleTable">
-      <tr>
-          <th id="tableName">金額</th>
-          <th id="tableArea">ジャンル</th>
-          <th id="tableAge">日付</th>
-      </tr>
-  </table>
 
   <footer>
-    <label class="open" for="pop-up"><i class="fas fa-pencil-alt fa-3x"></i></label>
-      <input type="checkbox" id="pop-up">
-      <div class="overlay">
-        <div class="window">
-          <label class="close" for="pop-up">×</label>
-          <p class="text">
-            <div id="wrapSampleForm">
-              <form id="sampleForm">
-                  金額：<input type="text" name="formName" value="1000">
-                  <br />
-                  ジャンル：
-                      <select name="formArea">
-                          <option selected>食費</option>
-                          <option>日用品</option>
-                          <option>交通費</option>
-                          <option>衣類</option>
-                          <option>レジャー</option>
-                          <option>その他</option>
-                      </select>
-                  <br />
-                  日付：
-                      <input type="text" name="formAge" value="8月1日">
-                  <br />
-              </form>
-              <button onclick="addTable()">追加</button>
-            </div>
-          </p>
-        </div>
-      </div>
+    <label><i class="fas fa-pencil-alt fa-3x"></i></label>
 
     <a class="budged" href="#">
       <i class="fas fa-hand-holding-usd fa-3x"></i>
