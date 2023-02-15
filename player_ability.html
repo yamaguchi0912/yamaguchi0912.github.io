@@ -15,6 +15,7 @@
   <title>サッカーアプリ</title>
   <style>
     body {
+      margin: 0;
       font-size: 40px;
       vertical-align: middle;
     }
@@ -27,11 +28,23 @@
     .main-contents{
       text-align: center;
     }
+    .radar_chart-title{
+      border: 1px solid#707070;
+      border-radius: 100px;
+      width: 450px;
+      margin: 0 0 10px 265px;
+    }
+    .bar-graph-title{
+      border: 1px solid#707070;
+      border-radius: 100px;
+      width: 450px;
+      margin: 10px 0 10px 265px;
+    }
 
     /* レーダーチャートタブ切替 */
     .tab_contents{
       border: 1px solid#707070;
-      border-radius: 25px;
+      border-radius: 50px;
     }
 
     #tab1:checked~.panels #area1 {
@@ -74,7 +87,7 @@
     }
 
     .tab_lab2{
-      padding: 0 10px;
+      margin: 20px 50px 20px 20px;
     }
 
     .bar-graph{
@@ -107,7 +120,7 @@
 
 <div class="main-contents">
   <h1>選手詳細能力画面</h1>
-  <h3>レーダーチャート</h3>
+  <h3 class="radar_chart-title">レーダーチャート</h3>
 
   <div class="graph-contents">
     <section class="tab_contents">
@@ -138,8 +151,8 @@
       </div>
     </section>
   
+    <h3 class="bar-graph-title">棒グラフ</h3>
     <div class="bar-graph">
-      <h3>棒グラフ</h3>
         <img src="images/player_data\bar_graph\AokiRyouta_bargraph.png" width="950" height="800">
     </div>
   </div>
