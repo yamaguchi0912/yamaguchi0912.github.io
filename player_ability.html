@@ -15,17 +15,25 @@
   <title>サッカーアプリ</title>
   <style>
     body {
-      text-align:center;
       font-size: 40px;
       vertical-align: middle;
     }
-    .image {
-      width: 80%;
-      margin: auto;
-      display: block;
+    
+    .return-button{
+      text-align: left;
+      margin: 5px 0 0 10px;
+    }
+
+    .main-contents{
+      text-align: center;
     }
 
     /* レーダーチャートタブ切替 */
+    .tab_contents{
+      border: 1px solid#707070;
+      border-radius: 25px;
+    }
+
     #tab1:checked~.panels #area1 {
 	    display: block;
     }
@@ -62,51 +70,88 @@
     }
 
     .tab_contents{
-      font-size: 60px;
+      font-size: 40px;
+    }
+
+    .tab_lab2{
+      padding: 0 10px;
+    }
+
+    .bar-graph{
+      margin: 10px 0 100px 0;
+      border: 1px solid#707070;
+      border-radius: 25px;
+    }
+
+    /* footer部分 */
+    footer{
+      width: 100%;
+      text-align: center;
+      border: 1px solid#707070;
+      position: fixed;
+      right: 10px;
+      bottom: 5px;
+      background-color: white;
+    }
+    ul.footer-icon li{
+      display: inline-block;
+      padding: 0 100px 0 100px;
     }
 
   </style>
 </head>
 <body>
-  <a href="index.html" class="return-button">
+  <a href="home.html" class="return-button">
     <i class="fas fa-arrow-alt-circle-left fa-2x"></i>
   </a>
+
+<div class="main-contents">
   <h1>選手詳細能力画面</h1>
-  <h2>レーダーチャート</h2>
+  <h3>レーダーチャート</h3>
 
-  <section class="tab_contents">
-    <div class="tab_wrap">
-        <input id="tab1" type="radio" name="check" checked>
-        <label for="tab1" class="tab_lab1">シュート</label>
-        <input id="tab2" type="radio" name="check">
-        <label for="tab2" class="tab_lab2">攻撃</label>
-        <input id="tab3" type="radio" name="check">
-        <label for="tab3" class="tab_lab3">守備</label>
-        <div class="panels">
-            <div id="area1" class="panel">
-                <ul class="panel_content">
-                    <img src="images/player_data\radar_chart\shoot\AokiRyouta_shoot.png" width="1100" height="650">
-                </ul>
-            </div>
-            <div id="area2" class="panel">
-                <ul class="panel_content">
-                    <img src="images/player_data\radar_chart\attack\AokiRyouta_attack.png" width="1100" height="650">
-                </ul>
-            </div>
-            <div id="area3" class="panel">
-                <ul class="panel_content">
-                    <img src="images/player_data\radar_chart\defense\AokiRyouta_defense.png" width="1100" height="650">
-                </ul>
-            </div>
-        </div>
+  <div class="graph-contents">
+    <section class="tab_contents">
+      <div class="tab_wrap">
+          <input id="tab1" type="radio" name="check" checked>
+          <label for="tab1" class="tab_lab1">シュート</label>
+          <input id="tab2" type="radio" name="check">
+          <label for="tab2" class="tab_lab2">攻撃</label>
+          <input id="tab3" type="radio" name="check">
+          <label for="tab3" class="tab_lab3">守備</label>
+          <div class="panels">
+              <div id="area1" class="panel">
+                  <ul class="panel_content">
+                      <img src="images/player_data\radar_chart\shoot\AokiRyouta_shoot.png" width="900" height="600">
+                  </ul>
+              </div>
+              <div id="area2" class="panel">
+                  <ul class="panel_content">
+                      <img src="images/player_data\radar_chart\attack\AokiRyouta_attack.png" width="900" height="600">
+                  </ul>
+              </div>
+              <div id="area3" class="panel">
+                  <ul class="panel_content">
+                      <img src="images/player_data\radar_chart\defense\AokiRyouta_defense.png" width="900" height="600">
+                  </ul>
+              </div>
+          </div>
+      </div>
+    </section>
+  
+    <div class="bar-graph">
+      <h3>棒グラフ</h3>
+        <img src="images/player_data\bar_graph\AokiRyouta_bargraph.png" width="950" height="800">
     </div>
-</section>
-
-　<h2>棒グラフ</h2>
-  <img src="images/player_data\bar_graph\AokiRyouta_bargraph.png" width="1100" height="800">
-  <!-- ホーム画面 -->
-  <a href="#" class="balance-img"><i class="fas fa-balance-scale fa-2x"></i></a>
-  <a href="index.html" class="home-img"><i class="fas fa-home fa-2x"></i></a>
-  <a href="#" class="gear-img"><i class="fas fa-cog fa-2x"></i></a>
+  </div>
+</div>
+  
+  <!-- フッター部分 -->
+  <footer>
+    <ul class="footer-icon">
+      <li><a href="#" class="balance-img"><i class="fas fa-balance-scale fa-2x"></i></a></li>
+      <li> <a href="home.html" class="home-img"><i class="fas fa-home fa-2x"></i></a></li>
+      <li><a href="#" class="gear-img"><i class="fas fa-cog fa-2x"></i></a></li>
+    </ul>
+  </footer>
 </body>
 </html>
