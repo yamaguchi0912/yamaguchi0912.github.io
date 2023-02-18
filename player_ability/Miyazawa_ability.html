@@ -1,0 +1,147 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- FontAwesome読み込み -->
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <!-- manifest.json呼び出し -->
+  <link rel="manifest" href="./manifest.json">
+  <script>
+    // service workerが有効なら、service-worker.js を登録
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js').then(function() { console.log('Service Worker Registered'); });
+   }
+  </script>
+  <title>サッカーアプリ</title>
+  <style>
+    body {
+      font-size: 40px;
+    }
+    
+    .return-button{
+      margin-top: 10px;
+    }
+
+    .main-contents{
+      text-align: center;
+    }
+    .radar_chart-title{
+      border: 1px solid#707070;
+      border-radius: 100px;
+      width: 450px;
+      margin: 0 0 10px 265px;
+    }
+    .bar-graph-title{
+      border: 1px solid#707070;
+      border-radius: 100px;
+      width: 450px;
+      margin: 10px 0 10px 265px;
+    }
+
+    /* レーダーチャートタブ切替 */
+    .tab_contents{
+      border: 1px solid#707070;
+      border-radius: 50px;
+      padding-top: 10px;
+    }
+
+    #tab1:checked~.panels #area1 {
+	    display: block;
+    }
+
+    #tab2:checked~.panels #area2 {
+      display: block;
+    }
+
+    #tab3:checked~.panels #area3 {
+      display: block;
+    }
+
+    #tab1:checked~.tab_lab1 {
+      background: #FF0000;
+      color: #242424;
+    }
+
+    #tab2:checked~.tab_lab2 {
+      background: #00B050;
+      color: #242424;
+    }
+
+    #tab3:checked~.tab_lab3 {
+      background: #4472C4;
+      color: #242424;
+    }
+
+    .panel {
+      display: none;
+    }
+
+    input[name="check"] {
+      display: none;
+    }
+
+    .tab_contents{
+      font-size: 40px;
+    }
+
+    .tab_lab1,.tab_lab2,.tab_lab3{
+      border: 1px solid#707070;
+      border-radius: 30px;
+      margin: 20px 60px 20px 20px;
+      padding: 1px;
+    }
+
+    .bar-graph{
+      margin: 10px 0 100px 0;
+      border: 1px solid#707070;
+      border-radius: 25px;
+    }
+  </style>
+</head>
+<body>
+  <a href="../home.html" class="return-button">
+    <i class="fas fa-arrow-alt-circle-left fa-2x"></i>
+  </a>
+
+<div class="main-contents">
+  <h2>選手詳細能力画面</h2>
+  <h3 class="radar_chart-title">レーダーチャート</h3>
+
+  <div class="graph-contents">
+    <section class="tab_contents">
+      <div class="tab_wrap">
+          <input id="tab1" type="radio" name="check" checked>
+          <label for="tab1" class="tab_lab1">シュート</label>
+          <input id="tab2" type="radio" name="check">
+          <label for="tab2" class="tab_lab2">攻撃</label>
+          <input id="tab3" type="radio" name="check">
+          <label for="tab3" class="tab_lab3">守備</label>
+          <div class="panels">
+              <div id="area1" class="panel">
+                  <ul class="panel_content">
+                      <img src="../images\player_data\radar_chart\shoot\Miyazawa_shoot.png" width="900" height="600">
+                  </ul>
+              </div>
+              <div id="area2" class="panel">
+                  <ul class="panel_content">
+                      <img src="../images\player_data\radar_chart\attack\Miyazawa_attack.png" width="900" height="600">
+                  </ul>
+              </div>
+              <div id="area3" class="panel">
+                  <ul class="panel_content">
+                      <img src="../images\player_data\radar_chart\defense\Miyazawa_defense.png" width="900" height="600">
+                  </ul>
+              </div>
+          </div>
+      </div>
+    </section>
+  
+    <h3 class="bar-graph-title">棒グラフ</h3>
+    <div class="bar-graph">
+        <img src="../images\player_data\bar_graph\Miyazawa_bargraph.png" width="950" height="800">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
